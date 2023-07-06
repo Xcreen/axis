@@ -1,12 +1,12 @@
 /*
  * Copyright 2001-2004 The Apache Software Foundation.
- * 
+ *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
- * 
+ *
  *      http://www.apache.org/licenses/LICENSE-2.0
- * 
+ *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
  * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
@@ -59,7 +59,7 @@ public abstract class Stub implements javax.xml.rpc.Stub {
 
     // Support for Attachments
     private Vector attachments = new Vector();
-    
+
     // Flag to determine whether this is the first call to register type mappings.
     // This need not be synchronized because firstCall is ONLY called from within
     // a synchronized block in the generated stub code.
@@ -78,8 +78,8 @@ public abstract class Stub implements javax.xml.rpc.Stub {
     } // firstCall
 
     /**
-     * Sets the value for a named property. JAX-RPC 1.0 specification 
-     * specifies a standard set of properties that may be passed 
+     * Sets the value for a named property. JAX-RPC 1.0 specification
+     * specifies a standard set of properties that may be passed
      * to the Stub._setProperty method. These properties include:
      * <UL>
      * <LI>javax.xml.rpc.security.auth.username: Username for the HTTP Basic Authentication
@@ -283,7 +283,7 @@ public abstract class Stub implements javax.xml.rpc.Stub {
 
     /**
      * Set the header
-     */ 
+     */
     public void setHeader(SOAPHeaderElement header) {
         headers.add(header);
     }
@@ -291,7 +291,7 @@ public abstract class Stub implements javax.xml.rpc.Stub {
     /**
      * Extract attachments
      * @param call
-     */ 
+     */
     public void extractAttachments(Call call) {
         attachments.clear();
         if(call.getResponseMessage() != null) {
@@ -301,18 +301,18 @@ public abstract class Stub implements javax.xml.rpc.Stub {
             }
         }
     }
-    
+
     /**
      * Add an attachment
      * @param handler
-     */ 
+     */
     public void addAttachment(Object handler) {
-        attachments.add(handler);        
+        attachments.add(handler);
     }
-    
+
     /**
      * Get the header element
-     */ 
+     */
     public SOAPHeaderElement getHeader(String namespace, String partName) {
         for(int i=0;i<headers.size();i++) {
             SOAPHeaderElement header = (SOAPHeaderElement)headers.get(i);
@@ -341,7 +341,7 @@ public abstract class Stub implements javax.xml.rpc.Stub {
 
     /**
      * Get the array of header elements
-     */ 
+     */
     public SOAPHeaderElement[] getHeaders() {
         SOAPHeaderElement[] array = new SOAPHeaderElement[headers.size()];
         headers.copyInto(array);
@@ -373,7 +373,7 @@ public abstract class Stub implements javax.xml.rpc.Stub {
      * The attachment array is cleared after this, so it is a destructive operation.
      * @return the array of attachments that was in the message, or an empty array if
      * there were none
-     */ 
+     */
     public Object[] getAttachments() {
         Object[] array = new Object[attachments.size()];
         attachments.copyInto(array);
@@ -387,7 +387,7 @@ public abstract class Stub implements javax.xml.rpc.Stub {
     public void clearHeaders() {
         headers.clear();
     }
-    
+
     /**
      * This method clears the request attachments.
      */
@@ -395,7 +395,7 @@ public abstract class Stub implements javax.xml.rpc.Stub {
         attachments.clear();
     }
 
-    protected void setRequestHeaders(org.apache.axis.client.Call call) throws AxisFault {        
+    protected void setRequestHeaders(org.apache.axis.client.Call call) throws AxisFault {
         // Set the call headers.
         SOAPHeaderElement[] headers = getHeaders();
         for(int i=0;i<headers.length;i++){
@@ -432,11 +432,14 @@ public abstract class Stub implements javax.xml.rpc.Stub {
      * @return
      */
     public Call _createCall() throws ServiceException {
-        _call = (Call) service.createCall();
+        // A single stub instance may be used concurrently by multiple threads; therefore we need
+        // to return the value of the local call variable instead of reading the _call attribute.
+        Call call = (Call) service.createCall();
+        _call = call;
 
         // TODO: There is a lot of code in the generated stubs that
         // can be moved here.
-        return _call;
+        return call;
     }
 
     /**

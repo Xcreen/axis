@@ -10,3 +10,7 @@ Thanks from all of us on the Axis team for downloading the package; help
 us make it better by sending comments to axis-user@ws.apache.org.
 
 
+             -------------------------------------------
+This fork includes the source-code of version 1.4 (https://archive.apache.org/dist/ws/axis/1_4/).
+It than apply some bug-fixes from https://github.com/apache/axis-axis1-java/tree/master/axis-rt-core.
+

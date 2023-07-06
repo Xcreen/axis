@@ -45,7 +45,6 @@ public class Detail extends SOAPFaultElement implements javax.xml.soap.Detail {
         return entry;
     }
 
-    @Override
     public DetailEntry addDetailEntry(QName qname) throws SOAPException {
         return null;
     }

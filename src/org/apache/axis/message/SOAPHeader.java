@@ -95,7 +95,7 @@ public class SOAPHeader extends MessageElement
         return headerElement;
     }
 
-    @Override
+
     public javax.xml.soap.SOAPHeaderElement addHeaderElement(QName qname) throws SOAPException {
         return null;
     }
@@ -122,22 +122,22 @@ public class SOAPHeader extends MessageElement
         return results.iterator();
     }
 
-    @Override
+
     public javax.xml.soap.SOAPHeaderElement addNotUnderstoodHeaderElement(QName name) throws SOAPException {
         return null;
     }
 
-    @Override
+
     public javax.xml.soap.SOAPHeaderElement addUpgradeHeaderElement(Iterator supportedSOAPURIs) throws SOAPException {
         return null;
     }
 
-    @Override
+
     public javax.xml.soap.SOAPHeaderElement addUpgradeHeaderElement(String[] supportedSoapUris) throws SOAPException {
         return null;
     }
 
-    @Override
+
     public javax.xml.soap.SOAPHeaderElement addUpgradeHeaderElement(String supportedSoapUri) throws SOAPException {
         return null;
     }

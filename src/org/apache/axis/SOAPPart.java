@@ -1383,32 +1383,32 @@ public class SOAPPart extends javax.xml.soap.SOAPPart implements Part
         return (currentForm == SOAPPart.FORM_INPUTSTREAM || currentForm == SOAPPart.FORM_BODYINSTREAM);
     }
 
-    @Override
+
     public String getValue() {
         return null;
     }
 
-    @Override
+
     public void setValue(String value) {
 
     }
 
-    @Override
+
     public void setParentElement(SOAPElement parent) throws SOAPException {
 
     }
 
-    @Override
+
     public SOAPElement getParentElement() {
         return null;
     }
 
-    @Override
+
     public void detachNode() {
 
     }
 
-    @Override
+
     public void recycleNode() {
 
     }

@@ -706,12 +706,10 @@ public class Message extends javax.xml.soap.SOAPMessage
         return mAttachments.getAttachments(headers);
     }
 
-    @Override
     public void removeAttachments(javax.xml.soap.MimeHeaders headers) {
 
     }
 
-    @Override
     public AttachmentPart getAttachment(SOAPElement element) throws SOAPException {
         return null;
     }

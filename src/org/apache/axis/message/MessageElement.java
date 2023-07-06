@@ -688,7 +688,6 @@ public class MessageElement extends NodeImpl implements SOAPElement,
         return prefixes.iterator();
     }
 
-    @Override
     public QName createQName(String localName, String prefix) throws SOAPException {
         return null;
     }
@@ -1306,7 +1305,6 @@ public class MessageElement extends NodeImpl implements SOAPElement,
         return child;
     }
 
-    @Override
     public SOAPElement addChildElement(QName qname) throws SOAPException {
         return null;
     }
@@ -1416,7 +1414,6 @@ public class MessageElement extends NodeImpl implements SOAPElement,
         return this;
     }
 
-    @Override
     public SOAPElement addAttribute(QName qname, String value) throws SOAPException {
         return null;
     }
@@ -1455,7 +1452,6 @@ public class MessageElement extends NodeImpl implements SOAPElement,
         return attributes.getValue(attrName.getURI(), attrName.getLocalName());
     }
 
-    @Override
     public String getAttributeValue(QName qname) {
         return null;
     }
@@ -1490,7 +1486,7 @@ public class MessageElement extends NodeImpl implements SOAPElement,
         return attrs.iterator();
     }
 
-    @Override
+
     public Iterator getAllAttributesAsQNames() {
         return null;
     }
@@ -1520,12 +1516,12 @@ public class MessageElement extends NodeImpl implements SOAPElement,
         return new PrefixedQName(getNamespaceURI(), getName(), getPrefix());
     }
 
-    @Override
+
     public QName getElementQName() {
         return null;
     }
 
-    @Override
+
     public SOAPElement setElementQName(QName newName) throws SOAPException {
         return null;
     }
@@ -1550,7 +1546,7 @@ public class MessageElement extends NodeImpl implements SOAPElement,
         return removed;
     }
 
-    @Override
+
     public boolean removeAttribute(QName qname) {
         return false;
     }

@@ -335,42 +335,42 @@ public class SOAPFault extends SOAPBodyElement implements javax.xml.soap.SOAPFau
         return detail;
     }
 
-    @Override
+
     public Iterator getFaultReasonLocales() throws SOAPException {
         return null;
     }
 
-    @Override
+
     public Iterator getFaultReasonTexts() throws SOAPException {
         return null;
     }
 
-    @Override
+
     public String getFaultReasonText(Locale locale) throws SOAPException {
         return null;
     }
 
-    @Override
+
     public void addFaultReasonText(String text, Locale locale) throws SOAPException {
 
     }
 
-    @Override
+
     public String getFaultNode() {
         return null;
     }
 
-    @Override
+
     public void setFaultNode(String uri) throws SOAPException {
 
     }
 
-    @Override
+
     public String getFaultRole() {
         return null;
     }
 
-    @Override
+
     public void setFaultRole(String uri) throws SOAPException {
 
     }
@@ -385,7 +385,7 @@ public class SOAPFault extends SOAPBodyElement implements javax.xml.soap.SOAPFau
         fault.setFaultCode(qname);
     }
 
-    @Override
+
     public void setFaultCode(QName faultCodeQName) throws SOAPException {
 
     }
@@ -397,22 +397,22 @@ public class SOAPFault extends SOAPBodyElement implements javax.xml.soap.SOAPFau
         return new PrefixedQName(uri, local, prefix);
     }
 
-    @Override
+
     public QName getFaultCodeAsQName() {
         return null;
     }
 
-    @Override
+
     public Iterator getFaultSubcodes() {
         return null;
     }
 
-    @Override
+
     public void removeAllFaultSubcodes() {
 
     }
 
-    @Override
+
     public void appendFaultSubcode(QName subcode) throws SOAPException {
 
     }
@@ -426,7 +426,7 @@ public class SOAPFault extends SOAPBodyElement implements javax.xml.soap.SOAPFau
         return locale;
     }
 
-    @Override
+
     public boolean hasDetail() {
         return false;
     }

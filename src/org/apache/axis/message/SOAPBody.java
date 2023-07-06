@@ -202,7 +202,7 @@ public class SOAPBody extends MessageElement
         return bodyElement;
     }
 
-    @Override
+
     public javax.xml.soap.SOAPBodyElement addBodyElement(QName qname) throws SOAPException {
         return null;
     }
@@ -214,7 +214,7 @@ public class SOAPBody extends MessageElement
         return fault;
     }
 
-    @Override
+
     public javax.xml.soap.SOAPFault addFault(QName faultCode, String faultString, Locale locale) throws SOAPException {
         return null;
     }
@@ -226,7 +226,7 @@ public class SOAPBody extends MessageElement
         return fault;
     }
 
-    @Override
+
     public javax.xml.soap.SOAPFault addFault(QName faultCode, String faultString) throws SOAPException {
         return null;
     }
@@ -237,7 +237,7 @@ public class SOAPBody extends MessageElement
         return bodyElement;
     }
 
-    @Override
+
     public Document extractContentAsDocument() throws SOAPException {
         return null;
     }

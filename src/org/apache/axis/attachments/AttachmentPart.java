@@ -352,17 +352,17 @@ public class AttachmentPart extends javax.xml.soap.AttachmentPart
         return is;
     }
 
-    @Override
+
     public InputStream getRawContent() throws SOAPException {
         return null;
     }
 
-    @Override
+
     public byte[] getRawContentBytes() throws SOAPException {
         return new byte[0];
     }
 
-    @Override
+
     public InputStream getBase64Content() throws SOAPException {
         return null;
     }
@@ -440,17 +440,17 @@ public class AttachmentPart extends javax.xml.soap.AttachmentPart
         }
     }
 
-    @Override
+
     public void setRawContent(InputStream content, String contentType) throws SOAPException {
 
     }
 
-    @Override
+
     public void setRawContentBytes(byte[] content, int offset, int len, String contentType) throws SOAPException {
 
     }
 
-    @Override
+
     public void setBase64Content(InputStream content, String contentType) throws SOAPException {
 
     }
